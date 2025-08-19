@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Trad Innovation - Building brighter futures with innovative learning solutions">
+  <title>Home | Trad Innovation</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+    .hero-section {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1470&q=80');
+      background-size: cover; background-position: center; background-attachment: fixed;
+      min-height: 80vh; display: flex; align-items: center;
+    }
+    .logo-text { font-weight: 700; letter-spacing: 0.5px;
+      background: linear-gradient(to right, #f59e0b, #fbbf24); -webkit-background-clip: text;
+      background-clip: text; color: transparent;
+    }
+    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+    .mobile-menu.open { max-height: 500px; }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04); }
+    .scroll-top { position: fixed; bottom: 2rem; right: 2rem; width: 50px; height: 50px; border-radius: 50%;
+      background: #1e40af; color: white; display: flex; justify-content: center; align-items: center;
+      cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999;
+    }
+    .scroll-top.active { opacity: 1; visibility: visible; }
+    .scroll-top:hover { background: #1e3a8a; transform: translateY(-3px); }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navigation -->
+  <nav class="bg-blue-800 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <i class="fas fa-graduation-cap text-2xl text-yellow-400"></i>
+        <span class="text-xl font-bold logo-text">Trad Innovation</span>
+      </div>
+      <div class="hidden md:flex space-x-8">
+        <a href="index.html" class="nav-link hover:text-yellow-300 font-medium transition">Home</a>
+        <a href="login.html" class="nav-link hover:text-yellow-300 font-medium transition">Login</a>
+        <a href="about.html" class="nav-link hover:text-yellow-300 font-medium transition">About</a>
+        <a href="contact.html" class="nav-link hover:text-yellow-300 font-medium transition">Contact</a>
+      </div>
+      <div class="md:hidden">
+        <button id="mobile-menu-button"><i class="fas fa-bars text-2xl"></i></button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-blue-900 mt-2 rounded-lg px-2 pt-2 pb-3 space-y-1">
+      <a href="index.html" class="block px-3 py-2 hover:bg-blue-700 rounded">Home</a>
+      <a href="login.html" class="block px-3 py-2 hover:bg-blue-700 rounded">Login</a>
+      <a href="about.html" class="block px-3 py-2 hover:bg-blue-700 rounded">About</a>
+      <a href="contact.html" class="block px-3 py-2 hover:bg-blue-700 rounded">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section text-white">
+    <div class="container mx-auto text-center max-w-4xl px-4">
+      <h1 class="text-5xl font-bold mb-6">Welcome to <span class="text-yellow-400">Trad Innovation</span></h1>
+      <p class="text-2xl mb-8 text-gray-200">Building brighter futures with innovative learning solutions tailored for the 21st century.</p>
+      <a href="login.html" class="bg-yellow-400 text-blue-900 font-semibold px-8 py-4 rounded-full hover:bg-yellow-300 transition shadow-lg">Login</a>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-12 bg-blue-700 text-white">
+    <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8 text-center">
+      <div class="stats-item bg-blue-800 p-6 rounded-xl shadow-md">
+        <div id="students-count" class="text-4xl font-bold mb-2">0</div>
+        <div class="text-yellow-300 font-medium">Students</div>
+      </div>
+      <div class="stats-item bg-blue-800 p-6 rounded-xl shadow-md">
+        <div id="teachers-count" class="text-4xl font-bold mb-2">0</div>
+        <div class="text-yellow-300 font-medium">Teachers</div>
+      </div>
+      <div class="stats-item bg-blue-800 p-6 rounded-xl shadow-md">
+        <div id="courses-count" class="text-4xl font-bold mb-2">0</div>
+        <div class="text-yellow-300 font-medium">Courses</div>
+      </div>
+      <div class="stats-item bg-blue-800 p-6 rounded-xl shadow-md">
+        <div id="years-count" class="text-4xl font-bold mb-2">0</div>
+        <div class="text-yellow-300 font-medium">Years</div>
+      </div>
+    </div>
+  </section>
+ <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="text-yellow-500 font-semibold">OUR VALUES</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">What We Stand For</h2>
+        <div class="w-24 h-1 bg-yellow-400 mx-auto mt-4"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card-hover bg-gray-50 p-8 rounded-xl shadow-md transition duration-300">
+          <div class="text-blue-600 mb-4">
+            <i class="fas fa-lightbulb text-5xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Innovation</h3>
+          <p class="text-gray-600">
+            We embrace cutting-edge technology and creative teaching methods to redefine education for the digital age.
+          </p>
+        </div>
+        <div class="card-hover bg-gray-50 p-8 rounded-xl shadow-md transition duration-300">
+          <div class="text-blue-600 mb-4">
+            <i class="fas fa-users text-5xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Community</h3>
+          <p class="text-gray-600">
+            We foster a supportive network connecting students, educators, and industry leaders in a thriving ecosystem.
+          </p>
+        </div>
+        <div class="card-hover bg-gray-50 p-8 rounded-xl shadow-md transition duration-300">
+          <div class="text-blue-600 mb-4">
+            <i class="fas fa-chart-line text-5xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Excellence</h3>
+          <p class="text-gray-600">
+            We commit to the highest standards in academic rigor, personal development, and professional growth.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="text-yellow-500 font-semibold">WHY CHOOSE US</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Our Unique Advantages</h2>
+        <div class="w-24 h-1 bg-yellow-400 mx-auto mt-4"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="mb-8">
+            <div class="flex items-start mb-4">
+              <div class="bg-blue-100 p-3 rounded-full mr-4">
+                <i class="fas fa-laptop-code text-blue-600 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Tech-Enabled Learning</h3>
+                <p class="text-gray-600">
+                  Our platform integrates AI-powered tools, virtual classrooms, and interactive content to enhance engagement.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-8">
+            <div class="flex items-start mb-4">
+              <div class="bg-blue-100 p-3 rounded-full mr-4">
+                <i class="fas fa-user-graduate text-blue-600 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Personalized Pathways</h3>
+                <p class="text-gray-600">
+                  Adaptive learning algorithms create customized education plans based on individual strengths and goals.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mb-8">
+            <div class="flex items-start mb-4">
+              <div class="bg-blue-100 p-3 rounded-full mr-4">
+                <i class="fas fa-briefcase text-blue-600 text-xl"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Career Readiness</h3>
+                <p class="text-gray-600">
+                  Industry-aligned curriculum and internship opportunities prepare students for tomorrow's job market.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" 
+               alt="Students learning together" 
+               class="rounded-xl shadow-xl w-full h-auto">
+          <div class="absolute -bottom-6 -right-6 bg-yellow-400 p-4 rounded-xl shadow-lg hidden md:block">
+            <div class="text-3xl font-bold text-blue-800">13+</div>
+            <div class="text-blue-800 font-medium">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-blue-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="text-yellow-300 font-semibold">TESTIMONIALS</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-2">What Our Community Says</h2>
+        <div class="w-24 h-1 bg-yellow-400 mx-auto mt-4"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="testimonial-card bg-blue-900 p-8 rounded-xl shadow-md transition duration-300">
+          <div class="flex items-center mb-4">
+            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Student testimonial" class="w-12 h-12 rounded-full mr-4">
+            <div>
+              <h4 class="font-semibold">Sarah Johnson</h4>
+              <p class="text-blue-300 text-sm">Student</p>
+            </div>
+          </div>
+          <p class="text-gray-300">
+            "The personalized learning approach helped me discover my passion for data science. The mentors are incredibly supportive!"
+          </p>
+          <div class="mt-4 text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        
+        <div class="testimonial-card bg-blue-900 p-8 rounded-xl shadow-md transition duration-300">
+          <div class="flex items-center mb-4">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Teacher testimonial" class="w-12 h-12 rounded-full mr-4">
+            <div>
+              <h4 class="font-semibold">Michael Chen</h4>
+              <p class="text-blue-300 text-sm">Educator</p>
+            </div>
+          </div>
+          <p class="text-gray-300">
+            "Teaching here has been transformative. The tech tools allow me to focus on what matters most - student success."
+          </p>
+          <div class="mt-4 text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+        
+        <div class="testimonial-card bg-blue-900 p-8 rounded-xl shadow-md transition duration-300">
+          <div class="flex items-center mb-4">
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Parent testimonial" class="w-12 h-12 rounded-full mr-4">
+            <div>
+              <h4 class="font-semibold">Lisa Rodriguez</h4>
+              <p class="text-blue-300 text-sm">Parent</p>
+            </div>
+          </div>
+          <p class="text-gray-300">
+            "My daughter's confidence has soared since joining Trad Innovation. The hybrid learning model works perfectly for our family."
+          </p>
+          <div class="mt-4 text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-blue-700 to-blue-900 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Learning Experience?</h2>
+      <p class="text-xl text-blue-200 mb-8 max-w-3xl mx-auto">
+        Join thousands of students and educators who are already benefiting from our innovative approach to education.
+      </p>
+      <div class="flex flex-col md:flex-row justify-center gap-4">
+        <a href="contact.html" class="btn-primary bg-yellow-400 text-blue-900 font-semibold px-8 py-4 rounded-full hover:bg-yellow-300 transition shadow-lg">
+          Get Started
+        </a>
+        <a href="about.html" class="btn-primary bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-blue-800 transition shadow-lg">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8 mb-12">
+        <div>
+          <h3 class="text-xl font-bold mb-4 flex items-center">
+            <i class="fas fa-graduation-cap text-yellow-400 mr-2"></i>
+            <span>Trad Innovation</span>
+          </h3>
+          <p class="text-gray-400 mb-4">
+            Transforming education through innovation and technology since 2010.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="social-icon text-gray-400 hover:text-blue-400 text-xl"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon text-gray-400 hover:text-blue-400 text-xl"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon text-gray-400 hover:text-pink-500 text-xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon text-gray-400 hover:text-red-500 text-xl"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon text-gray-400 hover:text-blue-300 text-xl"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-yellow-300 transition">Home</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-yellow-300 transition">About</a></li>
+            <li><a href="student.html" class="text-gray-400 hover:text-yellow-300 transition">Student Portal</a></li>
+            <li><a href="teachers.html" class="text-gray-400 hover:text-yellow-300 transition">Teacher Portal</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-yellow-300 transition">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Resources</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition">Blog</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition">Events</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition">Webinars</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition">Help Center</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-yellow-300 transition">Careers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt mr-3 text-yellow-400 mt-1"></i>
+              <span>123 Education Blvd, Innovation District, CA 90210</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-phone mr-3 text-yellow-400"></i>
+              <span>(123) 456-7890</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-envelope mr-3 text-yellow-400"></i>
+              <span>info@tradinnovation.edu</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-clock mr-3 text-yellow-400"></i>
+              <span>Mon-Fri: 8AM - 6PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm mb-4 md:mb-0">
+          &copy; 2023 Trad Innovation. All rights reserved.
+        </p>
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-400 hover:text-yellow-300 text-sm transition">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-yellow-300 text-sm transition">Terms of Service</a>
+          <a href="#" class="text-gray-400 hover:text-yellow-300 text-sm transition">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <div id="scroll-top" class="scroll-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- Scroll to Top -->
+  <div id="scroll-top" class="scroll-top"><i class="fas fa-arrow-up"></i></div>
+
+  <script>
+    // Mobile menu toggle
+    const menuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      menuButton.innerHTML = mobileMenu.classList.contains("open") 
+        ? '<i class="fas fa-times text-2xl"></i>' 
+        : '<i class="fas fa-bars text-2xl"></i>';
+    });
+
+    // Scroll top
+    const scrollTop = document.getElementById("scroll-top");
+    window.addEventListener("scroll", () => {
+      scrollTop.classList.toggle("active", window.pageYOffset > 300);
+    });
+    scrollTop.addEventListener("click", () => {
+      window.scrollTo({top:0, behavior:"smooth"});
+    });
+
+    // Animated Counter
+    function animateCounter(id, endValue) {
+      let obj = document.getElementById(id);
+      let start = 0;
+      let duration = 1500;
+      let stepTime = Math.abs(Math.floor(duration / endValue));
+      let timer = setInterval(() => {
+        start++;
+        obj.textContent = start + "+";
+        if (start >= endValue) clearInterval(timer);
+      }, stepTime);
+    }
+
+    // Fetch real-time stats
+    fetch("stats.php")
+      .then(res => res.json())
+      .then(data => {
+        animateCounter("students-count", data.students);
+        animateCounter("teachers-count", data.teachers);
+        animateCounter("courses-count", data.courses);
+        document.getElementById("years-count").textContent = data.years;
+      })
+      .catch(err => console.error("Error:", err));
+  </script>
+</body>
+</html>
